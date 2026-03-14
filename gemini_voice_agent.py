@@ -1,6 +1,7 @@
 import os
 import logging
 import time
+import tempfile
 from dotenv import load_dotenv
 
 from livekit import agents, rtc
