@@ -149,4 +149,24 @@ async def entrypoint(ctx: agents.JobContext):
 
 
 if __name__ == "__main__":
-    agents.cli.run_app(server)
+    import threading
+    from http.server import HTTPServer, BaseHTTPRequestHandler
+
+    # Start LiveKit agent in background
+    def run_agent():
+        agents.cli.run_app(server)
+
+    threading.Thread(target=run_agent, daemon=True).start()
+
+    # Minimal HTTP server so Render detects a port
+    class Handler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(b"LiveKit agent running")
+
+    port = int(os.environ.get("PORT", 10000))
+    httpd = HTTPServer(("0.0.0.0", port), Handler)
+
+    print(f"Web server running on port {port}")
+    httpd.serve_forever()
