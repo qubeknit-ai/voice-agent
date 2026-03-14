@@ -1,0 +1,31 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# Virtual env
+.python-version
+
+# Google credentials (sensitive)
+credentials.json
+
+# Model files (large binary files)
+*.onnx
+*.bin
+*.wav
+
+# uv lock (optional — keep if you want reproducible builds)
+# uv.lock
+
+# KMS folder if sensitive
+# KMS/
+
+#extra files
+deepgram_voice_agent.py
+gemini_vision_agent.py
+ollama_voice_agent.py

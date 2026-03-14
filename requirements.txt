@@ -1,0 +1,9 @@
+livekit-agents
+livekit-plugins-google
+livekit-plugins-silero
+livekit-plugins-turn-detector
+livekit-plugins-noise-cancellation
+python-dotenv
+pydub
+edge-tts
+av

@@ -1,0 +1,31 @@
+services:
+  - type: worker
+    name: voice-agent
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: LIVEKIT_URL
+        sync: false
+      - key: LIVEKIT_API_KEY
+        sync: false
+      - key: LIVEKIT_API_SECRET
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: GOOGLE_CREDENTIALS_JSON
+        sync: false
+```
+
+---
+
+**Step 5 — Create `.renderignore`** (exclude junk from zip):
+```
+.env
+.venv
+__pycache__
+*.pyc
+*.wav
+*.onnx
+*.bin
+node_modules
+.git

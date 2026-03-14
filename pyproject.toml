@@ -1,0 +1,22 @@
+[project]
+name = "voice-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "av>=16.1.0",
+    "edge-tts>=7.2.7",
+    "faster-whisper>=1.2.1",
+    "google-generativeai>=0.8.6",
+    "kokoro-onnx>=0.5.0",
+    "livekit-agents[faster-whisper,google,kokoro,ollama,openai,silero,turn-detector]>=1.4.5",
+    "livekit-plugins-deepgram>=1.4.5",
+    "livekit-plugins-noise-cancellation>=0.2.5",
+    "livekit-plugins-openai>=1.4.5",
+    "livekit-plugins-silero>=1.4.5",
+    "numpy>=2.4.3",
+    "pydub>=0.25.1",
+    "python-dotenv>=1.2.2",
+    "soundfile>=0.13.1",
+]
